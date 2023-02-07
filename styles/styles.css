@@ -1,0 +1,231 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Colors */
+/* Satoshi Font Family */
+@font-face {
+  font-family: 'Satoshi';
+  src: url(../typography/Satoshi/Fonts/OTF/Satoshi-Bold.otf);
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url(../typography/Satoshi/Fonts/OTF/Satoshi-Medium.otf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url(../typography/Satoshi/Fonts/OTF/Satoshi-Regular.otf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url(../typography/Satoshi/Fonts/OTF/Satoshi-Light.otf);
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Inter Font Family*/
+@font-face {
+  font-family: 'Inter';
+  src: url(../typography/Inter/static/Inter-Black.ttf);
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(../typography/Inter/static/Inter-bold.ttf);
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(../typography/Inter/static/Inter-Medium.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(../typography/Inter/static/Inter-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* General */
+* {
+  font-family: 'Satoshi';
+  color: #333333;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Inter';
+  line-height: 110%;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+h1.medium, h2.medium, h3.medium, h4.medium, h5.medium {
+  font-weight: 600;
+}
+
+h1.bold, h2.bold, h3.bold, h4.bold, h5.bold {
+  font-weight: 800;
+}
+
+h1.black, h2.black, h3.black, h4.black, h5.black {
+  font-weight: 900;
+}
+
+p {
+  font-weight: 400;
+  line-height: 110%;
+}
+
+p.xl {
+  font-size: 20px;
+}
+
+p.l {
+  font-size: 18px;
+}
+
+p.m {
+  font-size: 16px;
+}
+
+p.s {
+  font-size: 14px;
+}
+
+p.xs {
+  font-size: 12px;
+}
+
+p.light {
+  font-weight: 200;
+}
+
+p.medium {
+  font-weight: 600;
+}
+
+p.bold {
+  font-weight: 800;
+}
+
+p.uppercase {
+  letter-spacing: 5%;
+  text-transform: uppercase;
+}
+
+.shadow_1 {
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08), 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 2px 1px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08), 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 2px 1px rgba(0, 0, 0, 0.12);
+}
+
+.shadow_2 {
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 12px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 12px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.shadow_3 {
+  -webkit-box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.08), 0px 8px 16px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.08), 0px 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.shadow_4 {
+  -webkit-box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.12), 0px 16px 24px rgba(0, 0, 0, 0.12), 0px 16px 32px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.12), 0px 16px 24px rgba(0, 0, 0, 0.12), 0px 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Colors */
+a {
+  border-radius: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  line-height: 110%;
+  font-weight: 800;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.btn-primary {
+  background: #333333;
+  color: #fffffe;
+}
+
+.btn-secondary {
+  background: #fffffe;
+  color: #333333;
+}
+
+.btn-small {
+  padding: 4px 8px;
+  gap: 2px;
+  font-size: 14px;
+}
+
+.btn-medium {
+  padding: 6px 12px;
+  gap: 4px;
+  font-size: 16px;
+}
+
+.btn-large {
+  padding: 8px 16px;
+  gap: 4px;
+  font-size: 18px;
+}
+/*# sourceMappingURL=styles.css.map */

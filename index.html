@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="description" content="SEO description">
+    <meta name="keywords" content="Keywords">
+    <meta name="author" content="Mateusz Marzec">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Travel Guide</title>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/phosphor-icons"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <!-- AOS CSS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Google Analytics -->
+    <!-- Too Add -->
+
+    <!-- JS -->
+    <script async src="./scripts/app.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="form-wrapper">
+            <h2 class="bold">Ai Travel Guide</h2>
+            <form>
+                <div class="info-wrapper">
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city">
+                </div>
+                <div class="info-wrapper">
+                    <label for="days">Days</label>
+                    <input type="range" name="days" id="days">
+                </div>
+                <div class="info-wrapper">
+                    <label for="food">Food</label>
+                    <input type="radio" name="food" id="food">
+                </div>
+                <div id="dinnerType" class="hidden">
+                    <div class="info-wrapper">
+                        <label for="breakfast">Breakfast</label>
+                        <input type="radio" name="breakfast" id="breakfast">
+                    </div>
+                    <div class="info-wrapper">
+                        <label for="lunch">Lunch</label>
+                        <input type="radio" name="lunch" id="lunch">
+                    </div>
+                    <div class="info-wrapper">
+                        <label for="dinner">Dinner</label>
+                        <input type="radio" name="dinner" id="dinner">
+                    </div>
+                </div>
+                <div id="dinnerBudget" class="hidden">
+                    <div class="info-wrapper">
+                        <label for="low">Low</label>
+                        <input type="radio" name="budget" id="low">
+                    </div>
+                    <div class="info-wrapper">
+                        <label for="medium">Medium</label>
+                        <input type="radio" name="budget" id="medium">
+                    </div>
+                    <div class="info-wrapper">
+                        <label for="high">High</label>
+                        <input type="radio" name="budget" id="high">
+                    </div>
+                </div>
+                <div>
+                    <label for="activities">Specific Activities Types</label>
+                    <input type="radio" name="activities" id="activities">
+                </div>
+                <div id="activitiesTypes" class="hidden">
+                    <div class="info-wrapper">
+                        <label for="sightseeing">Sightseeing</label>
+                        <input type="radio" name="sightseeing" id="sightseeing">
+                    </div>
+                    <div class="info-wrapper">
+                        <label for="waterSports">Water Sports</label>
+                        <input type="radio" name="waterSports" id="waterSports">
+                    </div>
+                    <div class="info-wrapper">
+                        <label for="outdoorSports">Outdoor Sports</label>
+                        <input type="radio" name="outdoorSports" id="outdoorSports">
+                    </div>
+                    <div class="info-wrapper">
+                        <label for="culture">Cultural Places</label>
+                        <input type="radio" name="culture" id="culture">
+                    </div>
+                    <div class="info-wrapper">
+                        <label for="shopping">Shopping</label>
+                        <input type="radio" name="shopping" id="shopping">
+                    </div>
+                    <div class="info-wrapper">
+                        <label for="tasting">Tasting Tours</label>
+                        <input type="radio" name="tasting" id="tasting">
+                    </div>
+                </div>
+            </form>
+            <a class="btn-primary btn-large" id="generate">Generate Guide</a>
+        </div>
+        <div class="gallery-wrapper">
+            <div>
+                <img src="./images/Mobile-2.jpg" alt="">
+                <img src="./images/Mobile-1.jpg" alt="">
+                <img src="./images/Mobile-3.jpg" alt="">
+            </div>
+            <div>
+                <img src="./images/Desktop-2.jpg" alt="">
+                <img src="./images/Desktop-1.jpg" alt="">
+                <img src="./images/Desktop-3.jpg" alt="">
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

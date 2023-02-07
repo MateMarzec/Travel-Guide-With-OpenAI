@@ -1,0 +1,120 @@
+@import './colours';
+
+/* Satoshi Font Family */
+@font-face {
+    font-family: 'Satoshi';
+    src: url(../typography/Satoshi/Fonts/OTF/Satoshi-Bold.otf);
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Satoshi';
+    src: url(../typography/Satoshi/Fonts/OTF/Satoshi-Medium.otf);
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Satoshi';
+    src: url(../typography/Satoshi/Fonts/OTF/Satoshi-Regular.otf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Satoshi';
+    src: url(../typography/Satoshi/Fonts/OTF/Satoshi-Light.otf);
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* Inter Font Family*/
+@font-face {
+    font-family: 'Inter';
+    src: url(../typography/Inter/static/Inter-Black.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url(../typography/Inter/static/Inter-bold.ttf);
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url(../typography/Inter/static/Inter-Medium.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url(../typography/Inter/static/Inter-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* General */
+*{
+    font-family: 'Satoshi';
+    color: $natural800;
+}
+h1, h2, h3, h4, h5{
+    font-family: 'Inter';
+    line-height: 110%;
+    font-weight: 400;
+}
+h1{
+    font-size: 48px;
+}
+h2{
+    font-size: 42px;
+}
+h3{
+    font-size: 36px;
+}
+h4{
+    font-size: 30px;
+}
+h5{
+    font-size: 24px;
+}
+h1.medium, h2.medium, h3.medium, h4.medium, h5.medium{
+    font-weight: 600;
+}
+h1.bold, h2.bold, h3.bold, h4.bold, h5.bold{
+    font-weight: 800;
+}
+h1.black, h2.black, h3.black, h4.black, h5.black{
+    font-weight: 900;
+}
+p{
+    font-weight: 400;
+    line-height: 110%;
+}
+p.xl{
+    font-size: 20px;
+}
+p.l{
+    font-size: 18px;
+}
+p.m{
+    font-size: 16px;
+}
+p.s{
+    font-size: 14px;
+}
+p.xs{
+    font-size: 12px;
+}
+p.light{
+    font-weight: 200;
+}
+p.medium{
+    font-weight: 600;
+}
+p.bold{
+    font-weight: 800;
+}
+p.uppercase{
+    letter-spacing: 5%;
+    text-transform: uppercase;
+}
