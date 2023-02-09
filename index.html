@@ -29,11 +29,18 @@
     <!-- Too Add -->
 
     <!-- JS -->
-    <script async src="./scripts/app.js"></script>
+    <script src="./scripts/app.js"></script>
 </head>
 
 <body>
     <main>
+        <div class="mobile-gallery-wrapper">
+            <img class="shadow_3" src="./images/Mobile-2.jpg" alt="">
+            <img class="shadow_3" src="./images/Mobile-1.jpg" alt="">
+            <img class="shadow_3" src="./images/Mobile-3.jpg" alt="">
+        </div>
+        <div >
+        </div>
         <div class="form-wrapper">
             <h2 class="bold">Ai Travel Guide</h2>
             <form>
@@ -43,88 +50,104 @@
                 </div>
                 <div class="info-wrapper">
                     <label for="days">Days</label>
-                    <input type="range" name="days" id="days">
+                    <input type="text" name="days" id="days">
                 </div>
-                <div class="info-wrapper">
-                    <label for="food">Food</label>
-                    <input type="radio" name="food" id="food">
-                </div>
-                <div id="dinnerType" class="hidden">
+                <div class="radioTypes">
                     <div class="info-wrapper">
-                        <label for="breakfast">Breakfast</label>
-                        <input type="radio" name="breakfast" id="breakfast">
+                        <label for="meals">Meals Included</label>
+                        <select name="meals" id="meals">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    <div id="dinnerType" class="hidden">
+                        <div class="info-wrapper">
+                            <input type="checkbox" name="breakfast" id="breakfast">
+                            <label class="labelRadio" for="breakfast">Breakfast</label>
+                        </div>
+                        <div class="info-wrapper">
+                            <input type="checkbox" name="lunch" id="lunch">
+                            <label class="labelRadio" for="lunch">Lunch</label>
+                        </div>
+                        <div class="info-wrapper">
+                            <input type="checkbox" name="dinner" id="dinner">
+                            <label class="labelRadio" for="dinner">Dinner</label>
+                        </div>
                     </div>
                     <div class="info-wrapper">
-                        <label for="lunch">Lunch</label>
-                        <input type="radio" name="lunch" id="lunch">
+                        <label for="specificBudget">Specific Budget</label>
+                        <select name="specificBudget" id="specificBudget">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    <div id="dinnerBudget" class="hidden">
+                        <div class="info-wrapper">
+                            <input type="radio" name="budget" id="low">
+
+                            <label class="labelRadio" for="low">Low</label>
+                        </div>
+                        <div class="info-wrapper">
+                            <input type="radio" name="budget" id="medium">
+                            <label class="labelRadio" for="medium">Medium</label>
+                        </div>
+                        <div class="info-wrapper">
+                            <input type="radio" name="budget" id="high">
+                            <label class="labelRadio" for="high">High</label>
+                        </div>
                     </div>
                     <div class="info-wrapper">
-                        <label for="dinner">Dinner</label>
-                        <input type="radio" name="dinner" id="dinner">
+                        <label for="activities">Specific Activities</label>
+                        <select name="activities" id="activities">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
                     </div>
-                </div>
-                <div id="dinnerBudget" class="hidden">
-                    <div class="info-wrapper">
-                        <label for="low">Low</label>
-                        <input type="radio" name="budget" id="low">
-                    </div>
-                    <div class="info-wrapper">
-                        <label for="medium">Medium</label>
-                        <input type="radio" name="budget" id="medium">
-                    </div>
-                    <div class="info-wrapper">
-                        <label for="high">High</label>
-                        <input type="radio" name="budget" id="high">
-                    </div>
-                </div>
-                <div>
-                    <label for="activities">Specific Activities Types</label>
-                    <input type="radio" name="activities" id="activities">
-                </div>
-                <div id="activitiesTypes" class="hidden">
-                    <div class="info-wrapper">
-                        <label for="sightseeing">Sightseeing</label>
-                        <input type="radio" name="sightseeing" id="sightseeing">
-                    </div>
-                    <div class="info-wrapper">
-                        <label for="waterSports">Water Sports</label>
-                        <input type="radio" name="waterSports" id="waterSports">
-                    </div>
-                    <div class="info-wrapper">
-                        <label for="outdoorSports">Outdoor Sports</label>
-                        <input type="radio" name="outdoorSports" id="outdoorSports">
-                    </div>
-                    <div class="info-wrapper">
-                        <label for="culture">Cultural Places</label>
-                        <input type="radio" name="culture" id="culture">
-                    </div>
-                    <div class="info-wrapper">
-                        <label for="shopping">Shopping</label>
-                        <input type="radio" name="shopping" id="shopping">
-                    </div>
-                    <div class="info-wrapper">
-                        <label for="tasting">Tasting Tours</label>
-                        <input type="radio" name="tasting" id="tasting">
+                    <div id="activitiesTypes" class="hidden info_group-wrapper">
+                        <div class="info-wrapper">
+                            <input type="checkbox" name="sightseeing" id="sightseeing">
+                            <label class="labelRadio" for="sightseeing">Sightseeing</label>
+                        </div>
+                        <div class="info-wrapper">
+                            <input type="checkbox" name="waterSports" id="waterSports">
+                            <label class="labelRadio" for="waterSports">Water Sports</label>
+                        </div>
+                        <div class="info-wrapper">
+                            <input type="checkbox" name="outdoorSports" id="outdoorSports">
+                            <label class="labelRadio" for="outdoorSports">Outdoor Sports</label>
+                        </div>
+                        <div class="info-wrapper">
+                            <input type="checkbox" name="culture" id="culture">
+                            <label class="labelRadio" for="culture">Cultural Places</label>
+                        </div>
+                        <div class="info-wrapper">
+                            <input type="checkbox" name="shopping" id="shopping">
+                            <label class="labelRadio" for="shopping">Shopping</label>
+                        </div>
+                        <div class="info-wrapper">
+                            <input type="checkbox" name="tasting" id="tasting">
+                            <label class="labelRadio" for="tasting">Tasting Tours</label>
+                        </div>
                     </div>
                 </div>
             </form>
-            <a class="btn-primary btn-large" id="generate">Generate Guide</a>
-        </div>
-        <div class="gallery-wrapper">
-            <div>
-                <img src="./images/Mobile-2.jpg" alt="">
-                <img src="./images/Mobile-1.jpg" alt="">
-                <img src="./images/Mobile-3.jpg" alt="">
-            </div>
-            <div>
-                <img src="./images/Desktop-2.jpg" alt="">
-                <img src="./images/Desktop-1.jpg" alt="">
-                <img src="./images/Desktop-3.jpg" alt="">
-            </div>
+            <a class="btn-primary btn-large shadow_2" id="generate">Generate Guide</a>
+            <img class="shadow_3 desktop-img" src="./images/Desktop-2.jpg" alt="Moab, United States">
+            <img class="shadow_3 desktop-img" src="./images/Desktop-1.jpg" alt="Siargao island, Philippines">
+            <img class="shadow_3 desktop-img" src="./images/Desktop-3.jpg" alt="Lago di Braies, Italy">
+            <img class="shadow_3 desktop-img" src="./images/Desktop-6.jpg" alt="Maledives">
+            <img class="shadow_3 desktop-img" src="./images/Desktop-4.jpg" alt="Tulum, Mexico">
+            <img class="shadow_3 desktop-img" src="./images/Desktop-5.jpg" alt="Manarola, Italy">
         </div>
     </main>
     <footer>
-
+        <p class="s">Project created by:</p>
+        <p>
+            <a href="http://matt-design.co" target="_blank" rel="noopener noreferrer">MattDesign <i
+                    class="ph-link-bold"></i></a>
+            <a href="http://matt-design.co" target="_blank" rel="noopener noreferrer">Github <i
+                    class="ph-github-logo-bold"></i></a>
+        </p>
     </footer>
 </body>
 
