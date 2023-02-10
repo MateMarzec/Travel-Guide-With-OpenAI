@@ -5,9 +5,6 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-.hidden{
-    display: none !important;
-}
 @import './typography', './shadows','./buttons.scss';
 main{
     min-height: calc(100vh - 79.1965px);
@@ -69,20 +66,22 @@ main{
                     font-size: 16px;
                     font-weight: 400;
                     padding: 2px 8px;
-                    border: 1px solid $natural900;
+                    border: 1px solid $natural800;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     transition: 0.3s ease all;
                 }
                 input[type=checkbox]:checked + label, input[type=radio]:checked + label{
-                    background: $natural900;
+                    background: $natural800;
                     color: $natural100;
                 }
             }
             .radioTypes{
+                #activitiesTypes, #dinnerBudget, #dinnerType{
+                    display: none;
+                }
                 #dinnerType, #dinnerBudget{
-                    display: flex;
                     justify-content: center;
                     align-items: center;
                     flex-direction: row;
@@ -98,7 +97,7 @@ main{
                             }
                         }
                         &:nth-child(1){
-                            input[type=checkbox] + label{
+                            input[type=checkbox] + label, input[type=radio] + label{
                                 border-radius: 4px 0 0 4px;
                             }
                             input[type=checkbox]:checked + label{
@@ -106,7 +105,7 @@ main{
                             }
                         }
                         &:nth-child(3){
-                            input[type=checkbox] + label{
+                            input[type=checkbox] + label, input[type=radio] + label{
                                 border-radius: 0 4px 4px 0;
                             }
                             input[type=checkbox]:checked + label{
@@ -114,9 +113,9 @@ main{
                             }
                         }
                     }
+                    
                 }
                 #activitiesTypes{
-                    display: flex;
                     justify-content: center;
                     align-items: center;
                     flex-direction: row;
@@ -257,7 +256,6 @@ main{
                     right: 15%;
                     top: 65%;
                     transform: translate(15%, -65%);
-                    
                 }
             }
         }
@@ -301,3 +299,4 @@ footer{
         }
     }
 }
+

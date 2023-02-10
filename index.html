@@ -29,7 +29,8 @@
     <!-- Too Add -->
 
     <!-- JS -->
-    <script src="./scripts/app.js"></script>
+    <script src="./scripts/formListener.js" async></script>
+    <script src="./scripts/apiCall.js" async></script>
 </head>
 
 <body>
@@ -62,15 +63,15 @@
                     </div>
                     <div id="dinnerType" class="hidden">
                         <div class="info-wrapper">
-                            <input type="checkbox" name="breakfast" id="breakfast">
+                            <input type="checkbox" name="breakfast" value="breakfast" id="breakfast">
                             <label class="labelRadio" for="breakfast">Breakfast</label>
                         </div>
                         <div class="info-wrapper">
-                            <input type="checkbox" name="lunch" id="lunch">
+                            <input type="checkbox" name="lunch" value="lunch" id="lunch">
                             <label class="labelRadio" for="lunch">Lunch</label>
                         </div>
                         <div class="info-wrapper">
-                            <input type="checkbox" name="dinner" id="dinner">
+                            <input type="checkbox" name="dinner" value="dinner" id="dinner">
                             <label class="labelRadio" for="dinner">Dinner</label>
                         </div>
                     </div>
@@ -83,16 +84,15 @@
                     </div>
                     <div id="dinnerBudget" class="hidden">
                         <div class="info-wrapper">
-                            <input type="radio" name="budget" id="low">
-
+                            <input type="radio" name="budget" id="low" value="low">
                             <label class="labelRadio" for="low">Low</label>
                         </div>
                         <div class="info-wrapper">
-                            <input type="radio" name="budget" id="medium">
+                            <input type="radio" name="budget" id="medium" value="medium">
                             <label class="labelRadio" for="medium">Medium</label>
                         </div>
                         <div class="info-wrapper">
-                            <input type="radio" name="budget" id="high">
+                            <input type="radio" name="budget" id="high" value="high">
                             <label class="labelRadio" for="high">High</label>
                         </div>
                     </div>
@@ -105,27 +105,27 @@
                     </div>
                     <div id="activitiesTypes" class="hidden info_group-wrapper">
                         <div class="info-wrapper">
-                            <input type="checkbox" name="sightseeing" id="sightseeing">
+                            <input type="checkbox" name="sightseeing" value="sightseeing" id="sightseeing">
                             <label class="labelRadio" for="sightseeing">Sightseeing</label>
                         </div>
                         <div class="info-wrapper">
-                            <input type="checkbox" name="waterSports" id="waterSports">
+                            <input type="checkbox" name="waterSports" value="water sports" id="waterSports">
                             <label class="labelRadio" for="waterSports">Water Sports</label>
                         </div>
                         <div class="info-wrapper">
-                            <input type="checkbox" name="outdoorSports" id="outdoorSports">
+                            <input type="checkbox" name="outdoorSports" value="outdoor sports" id="outdoorSports">
                             <label class="labelRadio" for="outdoorSports">Outdoor Sports</label>
                         </div>
                         <div class="info-wrapper">
-                            <input type="checkbox" name="culture" id="culture">
+                            <input type="checkbox" name="culture" value="culture places" id="culture">
                             <label class="labelRadio" for="culture">Cultural Places</label>
                         </div>
                         <div class="info-wrapper">
-                            <input type="checkbox" name="shopping" id="shopping">
+                            <input type="checkbox" name="shopping" value="shopping" id="shopping">
                             <label class="labelRadio" for="shopping">Shopping</label>
                         </div>
                         <div class="info-wrapper">
-                            <input type="checkbox" name="tasting" id="tasting">
+                            <input type="checkbox" name="tasting" value="tasting tours" id="tasting">
                             <label class="labelRadio" for="tasting">Tasting Tours</label>
                         </div>
                     </div>

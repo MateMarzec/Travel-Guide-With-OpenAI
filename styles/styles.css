@@ -7,10 +7,6 @@
   scroll-behavior: smooth;
 }
 
-.hidden {
-  display: none !important;
-}
-
 /* Colors */
 /* Satoshi Font Family */
 @font-face {
@@ -339,7 +335,7 @@ main .form-wrapper form .info-wrapper input[type=checkbox] + label, main .form-w
   font-size: 16px;
   font-weight: 400;
   padding: 2px 8px;
-  border: 1px solid #1A1A1A;
+  border: 1px solid #333333;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -354,14 +350,15 @@ main .form-wrapper form .info-wrapper input[type=checkbox] + label, main .form-w
 }
 
 main .form-wrapper form .info-wrapper input[type=checkbox]:checked + label, main .form-wrapper form .info-wrapper input[type=radio]:checked + label {
-  background: #1A1A1A;
+  background: #333333;
   color: #fffffe;
 }
 
+main .form-wrapper form .radioTypes #activitiesTypes, main .form-wrapper form .radioTypes #dinnerBudget, main .form-wrapper form .radioTypes #dinnerType {
+  display: none;
+}
+
 main .form-wrapper form .radioTypes #dinnerType, main .form-wrapper form .radioTypes #dinnerBudget {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -388,7 +385,7 @@ main .form-wrapper form .radioTypes #dinnerType .info-wrapper:nth-child(2) label
   border-right: none;
 }
 
-main .form-wrapper form .radioTypes #dinnerType .info-wrapper:nth-child(1) input[type=checkbox] + label, main .form-wrapper form .radioTypes #dinnerBudget .info-wrapper:nth-child(1) input[type=checkbox] + label {
+main .form-wrapper form .radioTypes #dinnerType .info-wrapper:nth-child(1) input[type=checkbox] + label, main .form-wrapper form .radioTypes #dinnerType .info-wrapper:nth-child(1) input[type=radio] + label, main .form-wrapper form .radioTypes #dinnerBudget .info-wrapper:nth-child(1) input[type=checkbox] + label, main .form-wrapper form .radioTypes #dinnerBudget .info-wrapper:nth-child(1) input[type=radio] + label {
   border-radius: 4px 0 0 4px;
 }
 
@@ -396,7 +393,7 @@ main .form-wrapper form .radioTypes #dinnerType .info-wrapper:nth-child(1) input
   border-right-color: #fffffe;
 }
 
-main .form-wrapper form .radioTypes #dinnerType .info-wrapper:nth-child(3) input[type=checkbox] + label, main .form-wrapper form .radioTypes #dinnerBudget .info-wrapper:nth-child(3) input[type=checkbox] + label {
+main .form-wrapper form .radioTypes #dinnerType .info-wrapper:nth-child(3) input[type=checkbox] + label, main .form-wrapper form .radioTypes #dinnerType .info-wrapper:nth-child(3) input[type=radio] + label, main .form-wrapper form .radioTypes #dinnerBudget .info-wrapper:nth-child(3) input[type=checkbox] + label, main .form-wrapper form .radioTypes #dinnerBudget .info-wrapper:nth-child(3) input[type=radio] + label {
   border-radius: 0 4px 4px 0;
 }
 
@@ -405,9 +402,6 @@ main .form-wrapper form .radioTypes #dinnerType .info-wrapper:nth-child(3) input
 }
 
 main .form-wrapper form .radioTypes #activitiesTypes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
