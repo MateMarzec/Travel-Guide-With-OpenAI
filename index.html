@@ -43,7 +43,7 @@
         </div>
         <div >
         </div>
-        <div class="form-wrapper">
+        <section class="form-wrapper">
             <h2 class="bold">Ai Travel Guide</h2>
             <form>
                 <div class="info-wrapper">
@@ -52,7 +52,11 @@
                 </div>
                 <div class="info-wrapper">
                     <label for="days">Days</label>
-                    <input type="text" name="days" id="days">
+                    <div id="daysWrapper">
+                        <a id="plusDay" class="btn-primary"><i class="ph-plus-bold"></i></a>
+                        <input type="text" name="days" id="days" value="1" disabled>
+                        <a id="minusDay" class="btn-primary"><i class="ph-minus-bold"></i></a>
+                    </div>
                 </div>
                 <div class="radioTypes">
                     <div class="info-wrapper">
@@ -139,7 +143,10 @@
             <img class="shadow_3 desktop-img" src="./images/Desktop-6.jpg" alt="Maledives">
             <img class="shadow_3 desktop-img" src="./images/Desktop-4.jpg" alt="Tulum, Mexico">
             <img class="shadow_3 desktop-img" src="./images/Desktop-5.jpg" alt="Manarola, Italy">
-        </div>
+        </section>
+        <section>
+            <p id="result"></p>
+        </section>
     </main>
     <footer>
         <p class="s">Project created by:</p>

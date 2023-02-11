@@ -5,6 +5,8 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   scroll-behavior: smooth;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
 
 /* Colors */
@@ -261,6 +263,10 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 main .form-wrapper {
@@ -299,13 +305,54 @@ main .form-wrapper form .info-wrapper input[type=text] {
   padding: 2px 8px;
   border: 1px solid #F2F2F1;
   border-radius: 4px;
-  -webkit-transition: 0.3s ease all;
-  transition: 0.3s ease all;
 }
 
 main .form-wrapper form .info-wrapper input[type=text]:focus {
   border: 1px solid #CCCCCB;
   outline: none;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper a {
+  border: 1px solid #F2F2F1;
+  height: 30.5px;
+  width: 30.5px;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper a i {
+  color: #fffffe;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper a:hover {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 12px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 12px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper a:hover i {
+  color: #1A1A1A;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper input[type=text] {
+  width: calc(100% - 69px);
+  text-align: center;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper input[type=text]:disabled {
+  background-color: #fffffe;
 }
 
 main .form-wrapper form .info-wrapper input[type=range] {
@@ -318,8 +365,6 @@ main .form-wrapper form .info-wrapper select {
   padding: 2px 8px;
   border: 1px solid #F2F2F1;
   border-radius: 4px;
-  -webkit-transition: 0.3s ease all;
-  transition: 0.3s ease all;
 }
 
 main .form-wrapper form .info-wrapper select:focus {
@@ -345,8 +390,6 @@ main .form-wrapper form .info-wrapper input[type=checkbox] + label, main .form-w
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: 0.3s ease all;
-  transition: 0.3s ease all;
 }
 
 main .form-wrapper form .info-wrapper input[type=checkbox]:checked + label, main .form-wrapper form .info-wrapper input[type=radio]:checked + label {
