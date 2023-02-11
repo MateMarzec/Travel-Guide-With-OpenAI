@@ -52,7 +52,7 @@ function callApi(prompt){
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
+            'Authorization': 'Bearer ' + apiKey + ''
         },
         body: JSON.stringify({
             prompt: `${prompt}`,
