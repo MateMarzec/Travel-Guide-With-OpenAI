@@ -123,7 +123,7 @@ function callApi(prompt) {
             })
         })
         .then(res => res.json())
-        .then(data => target.innerText = data.choices[0].text)
+        .then(data => target.innerHTML = data.choices[0].text)
     } catch (err){
         console.log("Fetch Error");
         prompt("Sorry, we're experiencing some technical difficulties. Our system is unable to go through your request, please try again later");
