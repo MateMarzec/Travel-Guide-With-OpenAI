@@ -55,15 +55,15 @@
             <h2 class="bold">The Travel AI</h2>
             <form>
                 <div class="info-wrapper">
-                    <label for="city">City</label>
+                    <label for="city">City<span class="note" id="cityNote">*Required</span></label>
                     <input type="text" name="city" id="city">
                 </div>
                 <div class="info-wrapper">
-                    <label for="days">Days</label>
+                    <label for="days">Days<span class="note" id="daysNote">*Maximum 7 Days</span></label>
                     <div id="daysWrapper">
                         <a id="plusDay" class="btn-primary"><i class="ph-plus-bold"></i></a>
                         <input type="text" name="days" id="days" value="1" disabled>
-                        <a id="minusDay" class="btn-primary"><i class="ph-minus-bold"></i></a>
+                        <a id="minusDay" class="btn-primary disabled"><i class="ph-minus-bold"></i></a>
                     </div>
                 </div>
                 <div class="radioTypes">

@@ -1,3 +1,12 @@
+document.getElementById("city").addEventListener('change', (event) => {
+    if(!document.getElementById("city").value){
+        document.getElementById("city").style.border= "1px solid #F42C04"
+        document.getElementById("cityNote").style.color = "#F42C04"
+    } else {
+        document.getElementById("city").style.border = "1px solid #F2F2F1"
+        document.getElementById("cityNote").style.color = "#333333"
+    }
+});
 document.getElementById("plusDay").addEventListener('click', (event) => {
     dayCounter(true);
 });
@@ -11,32 +20,56 @@ document.getElementById("generate").addEventListener('click', (event) => {
 
 function dayCounter(buttonValue) {
     if(buttonValue){
+        document.getElementById("minusDay").classList.remove("disabled");
         let daysValue = document.getElementById("days").value;
         if(daysValue < 7){
+            document.getElementById("daysNote").style.color = "#333333"
             daysValue++;
             document.getElementById("days").value = daysValue;
+            if(daysValue === 7){
+                document.getElementById("plusDay").classList.add("disabled");
+            }
         } else {
-            daysError();
+            document.getElementById("daysNote").style.color = "#F42C04"
         }
     } else {
+        document.getElementById("plusDay").classList.remove("disabled");
         let daysValue = document.getElementById("days").value;
         if(daysValue > 1){
+            document.getElementById("daysNote").style.color = "#333333"
             daysValue--;
             document.getElementById("days").value = daysValue;
+            if(daysValue === 1){
+                document.getElementById("minusDay").classList.add("disabled");
+            }
         } else {
-            daysError();
+            document.getElementById("daysNote").style.color = "#F42C04"
         }
     }
 }
 
-function daysError() {
-
-}
 
 function validation() {
+    if(!document.getElementById("city").value){
+        document.getElementById("city").style.border= "1px solid #F42C04"
+        document.getElementById("cityNote").style.color = "#F42C04"
+    } else {
+        callApi(prompt);
+    }
+
+
+
+
+    //promptBuild();
+}
+
+function promptBuild() {
     let city = document.getElementById("city").value;
     let days = document.getElementById("days").value;
     let meals;
+    let budget;
+    let additional = "";
+
 
     if (document.getElementById("meals").value === "yes") {
         let mealsNodeList = document.getElementById("dinnerType").querySelectorAll('input:checked');
@@ -52,7 +85,7 @@ function validation() {
         meals = ""
     }
 
-    let budget;
+
     if (document.getElementById("specificBudget").value === "yes") {
         budget = "please consider the travel budget which is " + document.querySelector('input[name="budget"]:checked').value + ",";
     } else {
@@ -73,14 +106,14 @@ function validation() {
         activities = ""
     }
 
-    let additional = "";
+
     if (meals !== "" || budget !== "" || activities !== "") {
         additional = `Additionally, ${meals} ${budget} ${activities}`
     }
 
     let prompt = `Could you please write a travel guide for ${city} for ${days}. ${additional}`;
 
-    //callApi(prompt);
+    callApi(prompt);
 }
 
 const target = document.getElementById("result");

@@ -271,7 +271,7 @@ main {
 
 main .form-wrapper {
   display: block;
-  max-width: 384px;
+  width: 100%;
 }
 
 main .form-wrapper h2 {
@@ -294,9 +294,17 @@ main .form-wrapper form .info-wrapper {
 }
 
 main .form-wrapper form .info-wrapper label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
   margin-bottom: 4px;
   font-size: 14px;
   font-weight: 200;
+}
+
+main .form-wrapper form .info-wrapper label .note {
+  font-size: 8px;
 }
 
 main .form-wrapper form .info-wrapper input[type=text] {
@@ -346,6 +354,38 @@ main .form-wrapper form .info-wrapper #daysWrapper a:hover i {
   color: #1A1A1A;
 }
 
+main .form-wrapper form .info-wrapper #daysWrapper a:active {
+  border: 1px solid #1A1A1A;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper a:active i {
+  color: #fffffe;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper .disabled {
+  background: #CCCCCB;
+  cursor: default;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper .disabled:hover {
+  -webkit-transform: unset;
+          transform: unset;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper .disabled:hover i {
+  color: #fffffe;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper .disabled:active {
+  border: none;
+}
+
+main .form-wrapper form .info-wrapper #daysWrapper .disabled:active i {
+  color: #fffffe;
+}
+
 main .form-wrapper form .info-wrapper #daysWrapper input[type=text] {
   width: calc(100% - 69px);
   text-align: center;
@@ -353,6 +393,7 @@ main .form-wrapper form .info-wrapper #daysWrapper input[type=text] {
 
 main .form-wrapper form .info-wrapper #daysWrapper input[type=text]:disabled {
   background-color: #fffffe;
+  color: #1A1A1A;
 }
 
 main .form-wrapper form .info-wrapper input[type=range] {
@@ -399,6 +440,7 @@ main .form-wrapper form .info-wrapper input[type=checkbox]:checked + label, main
 
 main .form-wrapper form .radioTypes #activitiesTypes, main .form-wrapper form .radioTypes #dinnerBudget, main .form-wrapper form .radioTypes #dinnerType {
   display: none;
+  margin-top: -16px;
 }
 
 main .form-wrapper form .radioTypes #dinnerType, main .form-wrapper form .radioTypes #dinnerBudget {
@@ -553,6 +595,7 @@ main .mobile-gallery-wrapper img:nth-child(3) {
     padding: 32px;
     border: 1px solid #F2F2F1;
     border-radius: 16px;
+    width: 384px;
   }
 }
 
@@ -566,7 +609,6 @@ main .mobile-gallery-wrapper img:nth-child(3) {
             align-items: center;
   }
   main .form-wrapper {
-    max-width: 384px;
     margin: 0 auto;
   }
   main .form-wrapper .desktop-img {

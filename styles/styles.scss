@@ -18,7 +18,7 @@ main{
     flex-direction: column;
     .form-wrapper{
         display: block;
-        max-width: 384px;
+        width: 100%;
         h2{
             margin-bottom: 32px;
         }
@@ -29,9 +29,14 @@ main{
                 flex-direction: column;
                 margin-bottom: 24px;
                 label{
+                    display: flex;
+                    gap: 2px;
                     margin-bottom: 4px;
                     font-size: 14px;
                     font-weight: 200;
+                    .note{
+                        font-size: 8px;
+                    }
                 }
                 input[type=text]{
                     font-size: 18px;
@@ -63,12 +68,36 @@ main{
                                 color: $natural900;
                             }
                         }
+                        &:active{
+                            border: 1px solid $natural900;
+                            i{
+                                color: $natural100;
+                            }
+                        }
+                    }
+                    .disabled{
+                        background: $natural400;
+                        cursor: default;
+                        &:hover{
+                            transform: unset;
+                            box-shadow: none;
+                            i{
+                                color: $natural100;
+                            }
+                        }
+                        &:active{
+                            border: none;
+                            i{
+                                color: $natural100;
+                            }
+                        }
                     }
                     input[type=text]{
                         width: calc(100% - 69px);
                         text-align: center;
                         &:disabled{
                             background-color: $natural100;
+                            color: $natural900;
                         }
                     }
                 }
@@ -107,6 +136,7 @@ main{
             .radioTypes{
                 #activitiesTypes, #dinnerBudget, #dinnerType{
                     display: none;
+                    margin-top: -16px;
                 }
                 #dinnerType, #dinnerBudget{
                     justify-content: center;
@@ -236,6 +266,7 @@ main{
             padding: 32px;
             border: 1px solid $natural200;
             border-radius: 16px;
+            width: 384px;
         }
     }
 }
@@ -244,7 +275,6 @@ main{
         display: flex;
         align-items: center;
         .form-wrapper{
-            max-width: 384px;
             margin: 0 auto;
             .desktop-img{
                 display: block;
