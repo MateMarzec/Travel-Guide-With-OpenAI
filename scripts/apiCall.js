@@ -54,13 +54,8 @@ function validation() {
         document.getElementById("city").style.border= "1px solid #F42C04"
         document.getElementById("cityNote").style.color = "#F42C04"
     } else {
-        callApi(prompt);
+        promptBuild();
     }
-
-
-
-
-    //promptBuild();
 }
 
 function promptBuild() {
