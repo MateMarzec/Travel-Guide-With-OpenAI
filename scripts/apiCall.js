@@ -72,7 +72,7 @@ function promptBuild() {
 
         const specificMeals = mealsList.toString();
 
-        meals = `${specificMeals} for each day,`
+        meals = `restaurants for following meals: ${specificMeals} for each day,`
     } else {
         meals = ""
     }
@@ -95,7 +95,7 @@ function promptBuild() {
 
         activities = `following activities: ${specificActivities}`
     } else {
-        activities = ""
+        activities = "no meals,"
     }
 
     let additionally = "";
@@ -103,15 +103,15 @@ function promptBuild() {
         additionally = `Additionally could you consider: ${meals} ${budget} ${activities}.`
     }
 
-    let prompt = `Write travel guide for ${city}, for ${days} days. Return each day plan within <p> tag and wrap each location mentioned within <a> tag with attribute target _blank and link to google search. ${additionally}`;
-
+    let prompt = `Return a travel guide in following format: each day plan should be wrapped within <p> tag. This travel guide should be for ${city}, for ${days} days. ${additionally}`;
+    //Write travel guide for ${city}, for ${days} days. Return each day plan within <p> tag and wrap each points of interest and restaurant mentioned within the guide with <a> tag without a link. ${additionally}
     callApi(prompt);
 }
-
-const target = document.getElementById("result");
+let travelGuide;
+let travelPoints;
 function callApi(prompt) {
     try {
-        fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', {
+        fetch('https://api.openai.com/v1/completions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -119,13 +119,63 @@ function callApi(prompt) {
             },
             body: JSON.stringify({
                 prompt: `${prompt}`,
-                max_tokens: 2000,
+                model: 'text-davinci-003',
+                temperature: 0,
+                max_tokens: 1000
             })
         })
         .then(res => res.json())
-        .then(data => target.innerHTML = data.choices[0].text)
+        .then(function (data) {
+            travelGuide = data.choices[0].text;
+            callApiPoints();
+        })
     } catch (err){
         console.log(err);
+        alert("Sorry, we're experiencing some technical difficulties. Our system is unable to go through your request, please try again later");
+    }
+}
+function callApiPoints(){
+    try {
+        fetch('https://api.openai.com/v1/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + apiKey + ''
+            },
+            body: JSON.stringify({
+                prompt: `Extract the points of interest out of this text, with no additional words, separated by commas: ${travelGuide}`,
+                model: 'text-davinci-003',
+                temperature: 0,
+                max_tokens: 500
+            })
+        })
+        .then(res => res.json())
+        .then(function (data) {
+            travelPoints = data.choices[0].text;
+            displayResult();
+        })
+    } catch (err){
+        console.log(err);
+        alert("Sorry, we're experiencing some technical difficulties. Our system is unable to go through your request, please try again later");
+    }
+}
+const target = document.getElementById("result");
+function displayResult(){
+    if(travelGuide && travelPoints){
+        travelPoints = travelPoints.split(", ");
+        travelPoints[0] = travelPoints[0].substring(2);
+        console.log(travelGuide);
+        console.log(travelPoints);
+
+        let city = document.getElementById("city").value;
+        travelPoints.map(point => {
+            travelPoint = point.replace(/ /g, '+');
+            travelGuide = travelGuide.replace(point, `<a href="https://www.google.com/search?q=%22${travelPoint}+${city}%22" target="_blank">${point}</a>`)
+        })
+        console.log(travelGuide);
+        console.log(travelPoints);
+        target.innerHTML = travelGuide;
+    } else {
         alert("Sorry, we're experiencing some technical difficulties. Our system is unable to go through your request, please try again later");
     }
 }
