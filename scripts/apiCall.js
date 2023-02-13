@@ -72,14 +72,14 @@ function promptBuild() {
 
         const specificMeals = mealsList.toString();
 
-        meals = `could you consider ${specificMeals} for each day,`
+        meals = `${specificMeals} for each day,`
     } else {
         meals = ""
     }
 
     let budget;
     if (document.getElementById("specificBudget").value === "yes") {
-        budget = "consider travel budget which is " + document.querySelector('input[name="budget"]:checked').value + ",";
+        budget = "budget which is " + document.querySelector('input[name="budget"]:checked').value + ",";
     } else {
         budget = "";
     }
@@ -93,17 +93,17 @@ function promptBuild() {
 
         let specificActivities = activitiesList.toString();
 
-        activities = `if possible include following activities: ${specificActivities}`
+        activities = `following activities: ${specificActivities}`
     } else {
         activities = ""
     }
 
     let additionally = "";
     if (meals !== "" || budget !== "" || activities !== "") {
-        additionally = `Additionally, ${meals} ${budget} ${activities}`
+        additionally = `Additionally could you consider: ${meals} ${budget} ${activities}.`
     }
 
-    let prompt = `Could you please write a travel guide in format where each day will be summarized within <p> tag and each location mentioned will be wrapped within <a> tag, with link provided and _blank attribute added. The Travel Guide should be for ${city}, for ${days} days. ${additionally}`;
+    let prompt = `Write travel guide for ${city}, for ${days} days. Return each day plan within <p> tag and wrap each location mentioned within <a> tag with attribute target _blank and link to google search. ${additionally}`;
 
     callApi(prompt);
 }
@@ -125,7 +125,7 @@ function callApi(prompt) {
         .then(res => res.json())
         .then(data => target.innerHTML = data.choices[0].text)
     } catch (err){
-        console.log("Fetch Error");
-        prompt("Sorry, we're experiencing some technical difficulties. Our system is unable to go through your request, please try again later");
+        console.log(err);
+        alert("Sorry, we're experiencing some technical difficulties. Our system is unable to go through your request, please try again later");
     }
 }
