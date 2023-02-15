@@ -26,7 +26,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Google Analytics -->
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLQT22HP2G"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -36,7 +35,11 @@
         gtag('config', 'G-DLQT22HP2G');
     </script>
 
+    <!-- Google Captcha -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
     <!-- JS -->
+    <script src="./scripts/captcha.js" async></script>
     <script src="./scripts/apiKey.js" async></script>
     <script src="./scripts/formListener.js" async></script>
     <script src="./scripts/apiCall.js" async></script>
@@ -144,6 +147,10 @@
                     </div>
                 </div>
             </form>
+            <button class="g-recaptcha" 
+        data-sitekey="6LcXTYUkAAAAAHEoQoy5pqFPdRO9rC08CmTGjD_o" 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button>
             <a class="btn-primary btn-large shadow_2" id="generate">Generate Guide</a>
             <img class="shadow_3 desktop-img" src="./images/Desktop-2.jpg" alt="Moab, United States">
             <img class="shadow_3 desktop-img" src="./images/Desktop-1.jpg" alt="Siargao island, Philippines">
