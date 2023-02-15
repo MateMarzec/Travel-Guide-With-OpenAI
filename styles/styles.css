@@ -761,6 +761,10 @@ main .mobile-gallery-wrapper img:nth-child(3) {
           animation: mobileGallerySlideLeftBottom 3s linear 0.5s 1 normal forwards;
 }
 
+main #result {
+  opacity: 0;
+}
+
 main #result a {
   display: inline;
 }
@@ -771,6 +775,11 @@ main #result h2 {
 
 main #result p {
   margin-bottom: 8px;
+}
+
+main #result.fadeIn {
+  -webkit-animation: fadeIn 1s linear 0s 1 normal forwards;
+          animation: fadeIn 1s linear 0s 1 normal forwards;
 }
 
 @media (min-width: 568px) {

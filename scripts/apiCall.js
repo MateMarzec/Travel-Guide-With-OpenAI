@@ -72,9 +72,9 @@ function promptBuild() {
 
         const specificMeals = mealsList.toString();
 
-        meals = `restaurants for following meals: ${specificMeals} for each day,`
+        meals = `add restaurants for following meals: ${specificMeals} for each day,`
     } else {
-        meals = ""
+        meals = "do not mention any restaurants for meals"
     }
 
     let budget;
@@ -93,14 +93,14 @@ function promptBuild() {
 
         let specificActivities = activitiesList.toString();
 
-        activities = `following activities: ${specificActivities}`
+        activities = `add following activities: ${specificActivities}`
     } else {
-        activities = "no meals,"
+        activities = ""
     }
 
     let additionally = "";
     if (meals !== "" || budget !== "" || activities !== "") {
-        additionally = `Additionally could you consider: ${meals} ${budget} ${activities}.`
+        additionally = `Additionally could you please: ${meals} ${budget} ${activities}.`
     }
 
     let prompt = `Return a travel guide in following format: each day plan should be wrapped within <p> tag. This travel guide should be for ${city}, for ${days} days. ${additionally}`;
@@ -178,6 +178,7 @@ function displayResult() {
         hideLoader()
         setTimeout(function () {
             header = "<h2 class='bold'>The Travel AI</h2>"
+            target.classList.add("fadeIn");
             target.innerHTML = header + travelGuide;
         }, 1500);
     } else {

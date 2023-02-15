@@ -346,6 +346,7 @@ main{
         }
     }
     #result{
+        opacity: 0;
         a{
             display: inline;
         }
@@ -355,6 +356,9 @@ main{
         p{
             margin-bottom: 8px;
         }
+    }
+    #result.fadeIn{
+        animation: fadeIn 1s linear 0s 1 normal forwards;
     }
 }
 @media (min-width: 568px) {
