@@ -1,6 +1,6 @@
 document.getElementById("city").addEventListener('change', (event) => {
-    if(!document.getElementById("city").value){
-        document.getElementById("city").style.border= "1px solid #F42C04"
+    if (!document.getElementById("city").value) {
+        document.getElementById("city").style.border = "1px solid #F42C04"
         document.getElementById("cityNote").style.color = "#F42C04"
     } else {
         document.getElementById("city").style.border = "1px solid #F2F2F1"
@@ -19,14 +19,14 @@ document.getElementById("generate").addEventListener('click', (event) => {
 });
 
 function dayCounter(buttonValue) {
-    if(buttonValue){
+    if (buttonValue) {
         document.getElementById("minusDay").classList.remove("disabled");
         let daysValue = document.getElementById("days").value;
-        if(daysValue < 7){
+        if (daysValue < 7) {
             document.getElementById("daysNote").style.color = "#333333"
             daysValue++;
             document.getElementById("days").value = daysValue;
-            if(daysValue === 7){
+            if (daysValue === 7) {
                 document.getElementById("plusDay").classList.add("disabled");
             }
         } else {
@@ -35,11 +35,11 @@ function dayCounter(buttonValue) {
     } else {
         document.getElementById("plusDay").classList.remove("disabled");
         let daysValue = document.getElementById("days").value;
-        if(daysValue > 1){
+        if (daysValue > 1) {
             document.getElementById("daysNote").style.color = "#333333"
             daysValue--;
             document.getElementById("days").value = daysValue;
-            if(daysValue === 1){
+            if (daysValue === 1) {
                 document.getElementById("minusDay").classList.add("disabled");
             }
         } else {
@@ -50,8 +50,8 @@ function dayCounter(buttonValue) {
 
 
 function validation() {
-    if(!document.getElementById("city").value){
-        document.getElementById("city").style.border= "1px solid #F42C04"
+    if (!document.getElementById("city").value) {
+        document.getElementById("city").style.border = "1px solid #F42C04"
         document.getElementById("cityNote").style.color = "#F42C04"
     } else {
         promptBuild();
@@ -104,7 +104,8 @@ function promptBuild() {
     }
 
     let prompt = `Return a travel guide in following format: each day plan should be wrapped within <p> tag. This travel guide should be for ${city}, for ${days} days. ${additionally}`;
-    //Write travel guide for ${city}, for ${days} days. Return each day plan within <p> tag and wrap each points of interest and restaurant mentioned within the guide with <a> tag without a link. ${additionally}
+
+    showLoader();
     callApi(prompt);
 }
 let travelGuide;
@@ -124,17 +125,17 @@ function callApi(prompt) {
                 max_tokens: 1000
             })
         })
-        .then(res => res.json())
-        .then(function (data) {
-            travelGuide = data.choices[0].text;
-            callApiPoints();
-        })
-    } catch (err){
+            .then(res => res.json())
+            .then(function (data) {
+                travelGuide = data.choices[0].text;
+                callApiPoints();
+            })
+    } catch (err) {
         console.log(err);
         alert("Sorry, we're experiencing some technical difficulties. Our system is unable to go through your request, please try again later");
     }
 }
-function callApiPoints(){
+function callApiPoints() {
     try {
         fetch('https://api.openai.com/v1/completions', {
             method: 'POST',
@@ -149,19 +150,19 @@ function callApiPoints(){
                 max_tokens: 500
             })
         })
-        .then(res => res.json())
-        .then(function (data) {
-            travelPoints = data.choices[0].text;
-            displayResult();
-        })
-    } catch (err){
+            .then(res => res.json())
+            .then(function (data) {
+                travelPoints = data.choices[0].text;
+                displayResult();
+            })
+    } catch (err) {
         console.log(err);
         alert("Sorry, we're experiencing some technical difficulties. Our system is unable to go through your request, please try again later");
     }
 }
 const target = document.getElementById("result");
-function displayResult(){
-    if(travelGuide && travelPoints){
+function displayResult() {
+    if (travelGuide && travelPoints) {
         travelPoints = travelPoints.split(", ");
         travelPoints[0] = travelPoints[0].substring(2);
         console.log(travelGuide);
@@ -174,8 +175,31 @@ function displayResult(){
         })
         console.log(travelGuide);
         console.log(travelPoints);
-        target.innerHTML = travelGuide;
+        hideLoader()
+        setTimeout(function () {
+            header = "<h2 class='bold'>The Travel AI</h2>"
+            target.innerHTML = header + travelGuide;
+        }, 1500);
     } else {
         alert("Sorry, we're experiencing some technical difficulties. Our system is unable to go through your request, please try again later");
     }
+}
+
+function showLoader() {
+    document.getElementById("form").classList.add("hidden");
+    document.getElementById("loaderCopy").innerHTML = "Loading";
+    document.getElementById("loader").classList.toggle("hidden");
+
+    setTimeout(function () {
+        document.getElementById("loaderCopy").innerHTML = "We're looking for the best travel experience for you!";
+    }, 3500);
+    setTimeout(function () {
+        document.getElementById("loaderCopy").innerHTML = "Prepare yourself for the trip!";
+    }, 7000);
+    setTimeout(function () {
+        document.getElementById("loaderCopy").innerHTML = "We're almost done!";
+    }, 10000);
+}
+function hideLoader() {
+    document.getElementById("loader").classList.toggle("fadeOut");
 }

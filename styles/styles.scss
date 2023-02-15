@@ -6,6 +6,9 @@
     scroll-behavior: smooth;
     transition: 0.3s ease all;
 }
+.hidden{
+    display: none!important;
+}
 @import './typography', './shadows','./buttons.scss';
 
 @keyframes mobileGallerySlideLeftTop {
@@ -48,6 +51,16 @@
 @keyframes fadeIn {
     100%{
         opacity: 1;
+    }
+
+}
+@keyframes fadeOut {
+    99%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        display: none !important;
     }
 
 }
@@ -294,7 +307,7 @@ main{
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        .loader{
+        #loader{
             text-align: center;
             i{
                 animation: loader 2s linear 0s infinite normal;
@@ -335,6 +348,12 @@ main{
     #result{
         a{
             display: inline;
+        }
+        h2{
+            margin-bottom: 16px;
+        }
+        p{
+            margin-bottom: 8px;
         }
     }
 }
@@ -410,9 +429,6 @@ main{
         }
     }
 }
-
-
-
 footer{
     display: flex;
     flex-direction: column;
@@ -438,4 +454,6 @@ footer{
         }
     }
 }
-
+.fadeOut{
+    animation: fadeOut 0.5s linear 0s 1 normal forwards;
+}

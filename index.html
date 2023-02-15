@@ -50,12 +50,12 @@
         </div>
         <div>
         </div>
-        <section class="form-wrapper">
-            <h2 class="bold">The Travel AI<i class="ph-caret-down-bold"></i></h2>
+        <section class="form-wrapper" id="form">
+            <h2 class="bold">The Travel AI</h2>
             <form>
                 <div class="info-wrapper">
                     <label for="city">City<span class="note" id="cityNote">*Required</span></label>
-                    <input type="text" name="city" id="city">
+                    <input type="text" name="city" id="city" maxlength="85">
                 </div>
                 <div class="info-wrapper">
                     <label for="days">Days<span class="note" id="daysNote">*Maximum 7 Days</span></label>
@@ -152,11 +152,12 @@
             <img class="shadow_3 desktop-img" src="./images/Desktop-5.jpg" alt="Manarola, Italy">
         </section>
         <section class="resultsWrapper">
-            <div class="loader">
+            <div class="hidden" id="loader">
                 <i class="ph-circle-notch-bold"></i>
-                <p class="l medium" id="loaderCopy">Test</p>
+                <p class="l medium" id="loaderCopy"></p>
             </div>
-            <p class="m" id="result"></p>
+            <div class="m" id="result">
+            </div>
         </section>
     </main>
     <footer>

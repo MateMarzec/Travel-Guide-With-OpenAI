@@ -9,6 +9,10 @@
   transition: 0.3s ease all;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* Colors */
 /* Satoshi Font Family */
 @font-face {
@@ -336,6 +340,26 @@ a {
 @keyframes fadeIn {
   100% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none !important;
+  }
+}
+
+@keyframes fadeOut {
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none !important;
   }
 }
 
@@ -679,11 +703,11 @@ main .resultsWrapper {
           flex-direction: column;
 }
 
-main .resultsWrapper .loader {
+main .resultsWrapper #loader {
   text-align: center;
 }
 
-main .resultsWrapper .loader i {
+main .resultsWrapper #loader i {
   -webkit-animation: loader 2s linear 0s infinite normal;
           animation: loader 2s linear 0s infinite normal;
   font-size: 32px;
@@ -739,6 +763,14 @@ main .mobile-gallery-wrapper img:nth-child(3) {
 
 main #result a {
   display: inline;
+}
+
+main #result h2 {
+  margin-bottom: 16px;
+}
+
+main #result p {
+  margin-bottom: 8px;
 }
 
 @media (min-width: 568px) {
@@ -859,5 +891,10 @@ footer a:nth-child(1) {
 footer a i {
   margin-left: 4px;
   color: #fffffe;
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 0.5s linear 0s 1 normal forwards;
+          animation: fadeOut 0.5s linear 0s 1 normal forwards;
 }
 /*# sourceMappingURL=styles.css.map */
