@@ -779,6 +779,13 @@ main #result p {
   margin-bottom: 8px;
 }
 
+main #result .btn-primary {
+  margin-top: 8px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 main #result.fadeIn {
   -webkit-animation: fadeIn 1s linear 0s 1 normal forwards;
           animation: fadeIn 1s linear 0s 1 normal forwards;
@@ -789,6 +796,9 @@ main #result.fadeIn {
     padding: 32px;
     border: 1px solid #F2F2F1;
     border-radius: 16px;
+    width: 384px;
+  }
+  main .resultsWrapper {
     width: 384px;
   }
 }
@@ -850,6 +860,9 @@ main #result.fadeIn {
     top: 65%;
     -webkit-transform: translate(15%, -65%);
             transform: translate(15%, -65%);
+  }
+  main .resultsWrapper {
+    width: 640px;
   }
   main .mobile-gallery-wrapper {
     display: none;

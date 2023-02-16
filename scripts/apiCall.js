@@ -175,8 +175,9 @@ function displayResult() {
         hideLoader()
         setTimeout(function () {
             header = "<h2 class='bold'>The Travel AI</h2>"
+            refreshCta = "<a class='btn-primary btn-large shadow_2' href='https://thetravelai.world'>Try Again</a>"
             target.classList.add("fadeIn");
-            target.innerHTML = header + travelGuide;
+            target.innerHTML = header + travelGuide + refreshCta;
         }, 1500);
     } else {
         alert("Sorry, we're experiencing some technical difficulties. Our system is unable to go through your request, please try again later");
@@ -200,6 +201,9 @@ function showLoader() {
     setTimeout(function () {
         document.getElementById("loaderCopy").innerHTML = "Please be patient, writing travel guides for more than 3 days might take more time.";
     }, 17000);
+    setTimeout(function () {
+        document.getElementById("loaderCopy").innerHTML = "We apologize for any inconvenience, but it may take some time to create a personalized travel guide experience.";
+    }, 25000);
 }
 function hideLoader() {
     document.getElementById("loader").classList.toggle("fadeOut");

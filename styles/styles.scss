@@ -358,6 +358,10 @@ main{
         p{
             margin-bottom: 8px;
         }
+        .btn-primary{
+            margin-top: 8px;
+            display: inline-flex;
+        }
     }
     #result.fadeIn{
         animation: fadeIn 1s linear 0s 1 normal forwards;
@@ -369,6 +373,9 @@ main{
             padding: 32px;
             border: 1px solid $natural200;
             border-radius: 16px;
+            width: 384px;
+        }
+        .resultsWrapper{
             width: 384px;
         }
     }
@@ -419,6 +426,9 @@ main{
                     transform: translate(15%, -65%);
                 }
             }
+        }
+        .resultsWrapper{
+            width: 640px;
         }
         .mobile-gallery-wrapper{
             display: none;
