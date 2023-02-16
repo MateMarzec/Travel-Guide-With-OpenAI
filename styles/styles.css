@@ -539,11 +539,13 @@ main .form-wrapper form .info-wrapper select {
      -moz-appearance: none;
           appearance: none;
   position: relative;
+  background: #fffffe;
 }
 
 main .form-wrapper form .info-wrapper select:focus {
   border: 1px solid #CCCCCB;
   outline: none;
+  background: #fffffe;
 }
 
 main .form-wrapper form .info-wrapper input[type=checkbox], main .form-wrapper form .info-wrapper input[type=radio] {

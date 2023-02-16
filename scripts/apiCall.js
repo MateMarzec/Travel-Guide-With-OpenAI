@@ -165,16 +165,13 @@ function displayResult() {
     if (travelGuide && travelPoints) {
         travelPoints = travelPoints.split(", ");
         travelPoints[0] = travelPoints[0].substring(2);
-        console.log(travelGuide);
-        console.log(travelPoints);
 
         let city = document.getElementById("city").value;
         travelPoints.map(point => {
             travelPoint = point.replace(/ /g, '+');
             travelGuide = travelGuide.replace(point, `<a href="https://www.google.com/search?q=%22${travelPoint}+${city}%22" target="_blank">${point}</a>`)
         })
-        console.log(travelGuide);
-        console.log(travelPoints);
+
         hideLoader()
         setTimeout(function () {
             header = "<h2 class='bold'>The Travel AI</h2>"
@@ -200,6 +197,9 @@ function showLoader() {
     setTimeout(function () {
         document.getElementById("loaderCopy").innerHTML = "We're almost done!";
     }, 10000);
+    setTimeout(function () {
+        document.getElementById("loaderCopy").innerHTML = "Please be patient, writing travel guides for more than 3 days might take more time.";
+    }, 17000);
 }
 function hideLoader() {
     document.getElementById("loader").classList.toggle("fadeOut");

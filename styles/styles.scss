@@ -178,9 +178,11 @@ main{
                     border-radius: 4px;
                     appearance: none;
                     position: relative;
+                    background: $natural100;
                     &:focus{
                         border: 1px solid $natural400;
-                        outline: none
+                        outline: none;
+                        background: $natural100;
                     }
                 }
                 input[type=checkbox], input[type=radio]{
