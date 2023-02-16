@@ -349,7 +349,7 @@ a {
   }
   100% {
     opacity: 0;
-    display: none !important;
+    height: 0;
   }
 }
 
@@ -359,7 +359,7 @@ a {
   }
   100% {
     opacity: 0;
-    display: none !important;
+    height: 0;
   }
 }
 
