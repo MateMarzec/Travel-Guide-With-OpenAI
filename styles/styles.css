@@ -396,8 +396,8 @@ main {
 }
 
 main .form-wrapper {
-  -webkit-animation: fadeIn 1s linear 2s 1 normal forwards;
-          animation: fadeIn 1s linear 2s 1 normal forwards;
+  -webkit-animation: fadeIn 1s linear 1.5s 1 normal forwards;
+          animation: fadeIn 1s linear 1.5s 1 normal forwards;
   opacity: 0;
   display: block;
   width: 100%;
@@ -747,20 +747,20 @@ main .mobile-gallery-wrapper img {
 
 main .mobile-gallery-wrapper img:nth-child(1) {
   margin: 0px 0px -32px -160px;
-  -webkit-animation: mobileGallerySlideLeftTop 3s linear 0.5s 1 normal forwards;
-          animation: mobileGallerySlideLeftTop 3s linear 0.5s 1 normal forwards;
+  -webkit-animation: mobileGallerySlideLeftTop 2s ease-in 0.5s 1 normal forwards;
+          animation: mobileGallerySlideLeftTop 2s ease-in 0.5s 1 normal forwards;
 }
 
 main .mobile-gallery-wrapper img:nth-child(2) {
   margin: 0px -160px 0px 0px;
-  -webkit-animation: mobileGallerySlideRight 3s linear 0.5s 1 normal forwards;
-          animation: mobileGallerySlideRight 3s linear 0.5s 1 normal forwards;
+  -webkit-animation: mobileGallerySlideRight 2s ease-in 0.5s 1 normal forwards;
+          animation: mobileGallerySlideRight 2s ease-in 0.5s 1 normal forwards;
 }
 
 main .mobile-gallery-wrapper img:nth-child(3) {
   margin: -32px 0px 0px -160px;
-  -webkit-animation: mobileGallerySlideLeftBottom 3s linear 0.5s 1 normal forwards;
-          animation: mobileGallerySlideLeftBottom 3s linear 0.5s 1 normal forwards;
+  -webkit-animation: mobileGallerySlideLeftBottom 2s ease-in 0.5s 1 normal forwards;
+          animation: mobileGallerySlideLeftBottom 2s ease-in 0.5s 1 normal forwards;
 }
 
 main #result {
