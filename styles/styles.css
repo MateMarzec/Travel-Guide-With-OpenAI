@@ -771,7 +771,24 @@ main #result a {
   display: inline;
 }
 
+main #result h1 {
+  display: none;
+}
+
 main #result h2 {
+  font-family: 'Satoshi';
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+main #result h2:nth-child(n+4) {
+  margin-top: 16px;
+}
+
+main #result h2.bold {
+  font-family: 'Inter';
+  font-size: 42px;
   margin-bottom: 16px;
 }
 
