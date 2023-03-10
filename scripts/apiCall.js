@@ -116,7 +116,7 @@ function callApi(prompt) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + apiKey + ''
+                'Authorization': String('Bearer ' + apiKey)
             },
             body: JSON.stringify({
                 prompt: `${prompt}`,
@@ -141,7 +141,7 @@ function callApiPoints() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + apiKey + ''
+                'Authorization': String('Bearer ' + apiKey)
             },
             body: JSON.stringify({
                 prompt: `Extract the points of interest out of this text, with no additional words, separated by commas: ${travelGuide}`,
